@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# Quoteting Mechanism 
+# Quoting Mechanism 
 DATE=`date`
 
 echo "Current Date: $DATE"
