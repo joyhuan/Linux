@@ -38,13 +38,22 @@ echo '<-$1500.**>; (update?) [y|n]'
 # The Double Quotes (for value substitution)
 # Notice: The exceptions are: $ ` \$ \` \" \\
 VAR=ZARA
-echo "$VAT owes <-\$1500.**>; [ as of (`date +%m/%d`) ]"
+echo "$VAR owes <-\$1500.**>; [ as of (`date +%m/%d`) ]"
+
+# The Backquotes
+Date=`date`
+echo "Current Date: $DATE"
 
 # Shell Input/Output Redirections
-# Quoting Mechanism 
-DATE=`date`
+# Output Redirection
+who > users
+cat users
 
-echo "Current Date: $DATE"
+# Input Redirection
+wc -l users
+wc -l < users
+
+# Here Documents(used to redirect input into an interactive shell script/program) 
 cat << EOF
 This is a simple lookup program
 for good (and bad) restaurants 
@@ -52,10 +61,17 @@ in Cape Town.
 EOF
 
 filename=test.txt
-vi ssfilename <<EndOfCommands
+vi $filename <<EndOfCommands
 i
 This file was created automatically from
 a shell script
 ^[
 ZZ
 EndofCommands
+
+# Discard the output
+echo message 1>&2 
+# 0: STDIN; 1 STDOUT; 2 STDERR
+
+# Redirection Commands 
+# Shell Functions 
