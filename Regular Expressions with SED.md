@@ -8,10 +8,29 @@ scripts. Thus, all the input you feed into it passes through and goes to STDOUT 
 change the input file.
 
 ## Invoking sed
+```
+$ cat /etc/passwd | sed
+```
+The cat command dumps the contents of /etc/passwd to sed through the pipe into sed's pattern space. 
+The pattern space is the internal work buffer that sed uses for its operations.
 
 ## The sed General Syntax
+```
+/pattern/action
+```
+- pattern: a regular expression
+- action: one of the commands given in the following table
+If pattern is omitted, action is performed for every line as we have seen above.
+```
+p                       Prints the line
+d                       Deletes the line
+s/pattern1/pattern2/    Substitutes the first occurance of pattern1 with pattern2
+```
 
 ## Deleting All Lines with sed
+```
+$ cat /etc/passwd | sed 'd'
+```
 
 ## The sed Addresses
 
