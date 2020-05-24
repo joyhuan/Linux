@@ -31,6 +31,9 @@ s/pattern1/pattern2/    Substitutes the first occurance of pattern1 with pattern
 ```
 $ cat /etc/passwd | sed 'd'
 ```
+```
+$ sed -e 'd' /etc/passwd
+```
 
 ## The sed Addresses
 
